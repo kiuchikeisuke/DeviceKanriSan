@@ -1,0 +1,64 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: 端末管理さんAPI
+schemes:
+  - https
+paths:
+  /exec:
+    post:
+      summary: update
+      description: update
+      operationId: update
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/DeviceEntity'
+      responses:
+        '200':
+          description: result message
+          schema:
+            $ref: '#/definitions/MessageEntity'
+    get:
+      summary: getList
+      operationId: getList
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: result list
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DeviceEntity'
+definitions:
+  MessageEntity:
+    type: object
+    properties:
+      message:
+        type: string
+  DeviceEntity:
+    type: object
+    properties:
+      userName:
+        type: string
+      mailAddress:
+        type: string
+      deviceName:
+        type: string
+      deviceId:
+        type: string
+      returnDate:
+        type: string
+        format: date
+      status:
+        type: string
+        enum:
+          - using
+          - free

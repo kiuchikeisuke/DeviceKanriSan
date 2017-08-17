@@ -41,8 +41,3 @@ captures/
 # Keystore files
 *.jks
 !.gitkeep
-
-# others
-android-config.json
-swagger.yaml
-app/libs/*

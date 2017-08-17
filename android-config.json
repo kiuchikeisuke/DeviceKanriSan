@@ -1,0 +1,6 @@
+{
+  "artifactId":"device-kanri-api",
+  "artifactVersion":"1.0.0",
+  "useRxJava2":"true",
+  "library":"retrofit2"
+}

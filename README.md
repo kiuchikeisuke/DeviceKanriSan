@@ -12,20 +12,6 @@ GASのURLを記載する必要があります。具体的には`ApiModules.kt`�
     }
 ```
 
-同様の理由により、SwaggerAPIも追加する必要があります。
-これはサンプルを[Gistに公開](https://gist.github.com/kiuchikeisuke/7b7f38867231c748c81bc8cb377a27ec)してあるのでそちらを参考にdevice-kanri-api.jar的なやつを作ってください
-作成したらそれを`app/libs`の中に放り込めばOKです。
-なお、ビルド時に指定するオプション指定は以下の通り.RxJava2とRetrofit2が必須です
-```json
-{
-  "groupId":"your.group.id",
-  "artifactId":"device-kanri-api",
-  "artifactVersion":"1.0.0",
-  "useRxJava2":"true",
-  "library":"retrofit2"
-}
-```
-
 ## サービスの仕様について
 - レンタルは**一律７日間**で貸し出し
 - **レンタル期間をすぎると１時間ごとにBOTがメール通知を行います**
