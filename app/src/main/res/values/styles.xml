@@ -1,0 +1,15 @@
+<resources>
+    <attr name="toolbar_title" format="reference"/>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbar_title">@string/app_name</item>
+    </style>
+
+    <style name="LoginActivity" parent="AppTheme">
+        <item name="toolbar_title">@string/login</item>
+    </style>
+</resources>

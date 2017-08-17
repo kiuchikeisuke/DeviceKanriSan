@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "jp.ne.keisuke.kiuchi.devicekanrisan"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        master {
+            buildConfigField("jp.ne.keisuke.kiuchi.devicekanrisan.utils.commons.AppType", "APP_TYPE", "jp.ne.keisuke.kiuchi.devicekanrisan.utils.commons.AppType.MASTER")
+            dimension "default"
+        }
+        slave {
+            buildConfigField("jp.ne.keisuke.kiuchi.devicekanrisan.utils.commons.AppType", "APP_TYPE", "jp.ne.keisuke.kiuchi.devicekanrisan.utils.commons.AppType.SLAVE")
+            dimension "default"
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        main.kotlin.srcDirs += 'src/main/kotlin'
+        test.kotlin.srcDirs += 'src/test/kotlin'
+        androidTest.kotlin.srcDirs += 'src/androidTest/kotlin'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.android.support:design:$supportLibVersion"
+    implementation "com.android.support:cardview-v7:$supportLibVersion"
+    implementation 'com.google.dagger:dagger:2.+'
+    implementation 'com.google.dagger:dagger-android:2.+'
+    implementation 'com.google.dagger:dagger-android-support:2.+'
+    implementation 'com.jakewharton:kotterknife:+'
+    implementation 'io.reactivex.rxjava2:rxjava:+'
+    implementation 'io.reactivex.rxjava2:rxkotlin:+'
+    implementation 'io.reactivex.rxjava2:rxandroid:+'
+    implementation 'com.squareup.retrofit2:retrofit:+'
+    implementation 'com.squareup.retrofit2:converter-gson:+'
+    implementation 'com.squareup.retrofit2:converter-scalars:+'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:+'
+    implementation 'com.squareup.okhttp3:logging-interceptor:+'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    kapt 'com.google.dagger:dagger-compiler:2.+'
+    kapt 'com.google.dagger:dagger-android-processor:2.+'
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.0.5'
+    //zxing
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation 'com.google.android.gms:play-services:7.8+'
+
+}

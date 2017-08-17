@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">たんまつ管理さん</string>
+    <string name="login">ログイン</string>
+    <string name="logout">ログアウト</string>
+    <string name="code_reader_hint">QRコードにかざしてください</string>
+    <string name="navigate_message_error">状態がおかしくなってるのでアプリをもう一度起動してください</string>
+    <string name="navigate_message_login">社員証のQRコードを読み込ませてください</string>
+    <string name="navigate_message_rental">レンタルしたい端末のQRコードを読み込ませてください</string>
+    <string name="navigate_message_return">返却する端末のQRコードを読み込ませてください</string>
+    <string name="qrcode_read_error">正しくQRコードが読み取れませんでした。再度読み込ませてください</string>
+
+    <string name="rental_dialog_message">\n続けてレンタルしますか?</string>
+    <string name="returned_dialog_message">\n続けて返却しますか?</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="logout_message">ログアウトしました</string>
+    <string name="current_user">現在のユーザ:%1$sさん</string>
+    <string name="rental">借用</string>
+    <string name="returned">返却</string>
+    <string name="device_list">端末一覧</string>
+    <string name="search">検索</string>
+    <string name="search_hint">OR/AND検索はない</string>
+    <string name="device_name">デバイス名:%1$s</string>
+    <string name="device_id">デバイスId:%1$s</string>
+    <string name="user_name">利用者:%1$s</string>
+    <string name="mail_address">連絡先:%1$s</string>
+    <string name="rental_limit">貸出期限:%1$s</string>
+    <string name="status_using">貸出中</string>
+    <string name="status_limit_over">期限切</string>
+    <string name="status_free">利用可</string>
+    <string name="parameter_error_message">パラメータがおかしいです。再度QRコードを読み込ませてください。\n何度もエラーになる場合はQRコードかサーバの実装が間違ってる可能性があります</string>
+</resources>
